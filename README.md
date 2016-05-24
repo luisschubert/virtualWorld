@@ -4,7 +4,6 @@
 ###Description:<br>
 virtualWorld is an implementation of a virtual World using the go programming language. The purpose of this project is to serve as a building block for future virtual worlds. 
 
-<br>
 
 ###Instructions:
 
@@ -15,7 +14,6 @@ virtualWorld is an implementation of a virtual World using the go programming la
 4. Run the executable using `go ./main`
 5. Access the virtual world at <a href="http://localhost:8000">Virtual World</a> (localhost port 8000)
 
-<br>
 
 ###Collaboration:
 
