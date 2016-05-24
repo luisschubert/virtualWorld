@@ -5,3 +5,19 @@
   - this will create an executable file to
 4. Run the executable using `go ./main`
 5. Access the virtual world at <a href="http://localhost:8000">Virtual World</a> (localhost port 8000)
+
+<br>
+
+##Where to go from here?
+###Short-term
+- [ ] introductory paragraph for homepage
+- [ ] improved UI
+ 
+
+###Long-term
+- [ ] avatar representation
+- [ ] deployable on routers
+- [ ] video sharing
+- [ ] picture sharing
+
+
