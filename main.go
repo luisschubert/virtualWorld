@@ -30,6 +30,7 @@ var cookieHandler = securecookie.New(
     securecookie.GenerateRandomKey(64),
     securecookie.GenerateRandomKey(32))
 
+//gets the username from the cookie data
 func getUserName(request *http.Request) (userName string) {
     if cookie, err := request.Cookie("session"); err == nil {
         cookieValue := make(map[string]string)
@@ -40,6 +41,7 @@ func getUserName(request *http.Request) (userName string) {
     return userName
 }
 
+//sets the session's username
 func setSession(userName string, response http.ResponseWriter) {
     value := map[string]string{
         "name": userName,
@@ -54,6 +56,7 @@ func setSession(userName string, response http.ResponseWriter) {
     }
 }
 
+//clear a session
 func clearSession(response http.ResponseWriter) {
     cookie := &http.Cookie{
         Name:   "session",
@@ -66,10 +69,12 @@ func clearSession(response http.ResponseWriter) {
 
 // login handler
 
+//User data object
 const newUser = `
 <li>%s</li>
 `
 
+//handles login and stores the user object in the user list
 func loginHandler(response http.ResponseWriter, request *http.Request) {
     name := request.FormValue("name")
     pass := request.FormValue("password")
@@ -97,6 +102,7 @@ func loginHandler(response http.ResponseWriter, request *http.Request) {
 
 // logout handler
 
+//logs out the user and clears the cookie
 func logoutHandler(response http.ResponseWriter, request *http.Request) {
     clearSession(response)
     username := getUserName(request)
@@ -115,11 +121,12 @@ func logoutHandler(response http.ResponseWriter, request *http.Request) {
     http.Redirect(response, request, "/", 302)
 }
 
+//Post data object
 const post = `
 <p>%s – %s</p>
 `
 
-// post handler
+//Handles the posting of new data to the world data and reloads the page
 func postHandler(response http.ResponseWriter, request *http.Request) {
     userName := request.FormValue("username")
     newPost := request.FormValue("newPost")
@@ -201,7 +208,7 @@ const internalPage = `
 </div>
 </body>
 `
-
+//handles loading the world data and displaying it to the user
 func inWorldPageHandler(response http.ResponseWriter, request *http.Request) {
     userName := getUserName(request)
     body, err := ioutil.ReadFile("world.txt")
