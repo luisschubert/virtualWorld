@@ -10,20 +10,21 @@ virtualWorld is an implementation of a virtual World using the go programming la
 1. Download  and Install the Go SDK https://golang.org/doc/install
 2. Clone git repository to your machine
 3. Run `go build main.go` in the directory with the files
-  - this will create an executable file to
+  - this will create an executable file
 4. Run the executable using `go ./main`
 5. Access the virtual world at <a href="http://localhost:8000">Virtual World</a> (localhost port 8000)
 
 
 ###Collaboration:
 
-Join me in learning the go programming language and creating a virtual world. Anyone is welcome and encourage to participate in the development. Feedback, tips and opinions are always welcome.
+Join me in learning the go programming language and creating a virtual world. Anyone is welcome and encourage to participate in the development. Feedback, tips and opinions are always welcome.<br>
 Remember... there are no bad ideas during brainstorming!
 
 ##Where to go from here?
 ###Short-term
 - [ ] introductory paragraph for homepage
 - [ ] improved UI
+- [ ] add server messages
  
 
 ###Long-term
